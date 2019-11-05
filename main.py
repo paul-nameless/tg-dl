@@ -9,10 +9,10 @@ bot = telebot.TeleBot(TOKEN)
 
 
 def run_cmd(url, chat_id, args=''):
-    hook = f"curl -F document=@'{{}}' -F caption='{{}}' https://api.telegram.org/bot{TOKEN}/sendDocument?chat_id={chat_id} && rm {{}}"
+    hook = f'python3 upload.py {{}} {chat_id} {TOKEN}'
     cmd = f"youtube-dl -o '%(title)s.%(ext)s' {args} --exec '{hook}' {url}"
     print(shlex.split(cmd))
-    subprocess.Popen(shlex.split(cmd))
+    p = subprocess.Popen(shlex.split(cmd))
 
 
 @bot.message_handler(commands=['start', 'help'])

@@ -7,5 +7,6 @@ WORKDIR /app
 RUN pip3 install -U pyTelegramBotAPI youtube-dl
 
 ADD main.py /app/main.py
+ADD upload.py /app/upload.py
 
 CMD python3 main.py

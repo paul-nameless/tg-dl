@@ -17,5 +17,5 @@ Audio will download and upload to telegram mp3 and video will download and uploa
 git clone https://github.com/paul-nameless/tg-dl.git
 cd tg-dl
 docker build -t dl .
-docker run -d --name dl -e TOKEN=[bot token] dl
+docker run -d --restart=unless-stopped --name dl -e TOKEN=[bot token] dl
 ```
