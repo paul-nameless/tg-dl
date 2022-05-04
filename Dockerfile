@@ -1,8 +1,8 @@
-FROM python:3.7.5-alpine3.10
-
-RUN apk add --no-cache ffmpeg curl
+FROM python:3.10.4-slim-bullseye
 
 WORKDIR /app
+
+RUN apt update && apt install -y ffmpeg curl
 
 RUN pip3 install -U pyTelegramBotAPI youtube-dl
 

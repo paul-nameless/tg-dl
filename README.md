@@ -1,6 +1,6 @@
 # Telegram music/video downloader
 
-I had a simple problem, every week there is a show on youtube that I wanted to listen. So I need to have a simple and easy way to be able to do it. This is simple bot that passes given url to youtube-dl and can download from any source youtube-dl can (theoretically, tested youtube and soundcloud).
+Download audio/video from youtube/soundcloud and get back in telegram
 
 ## Commands
 
