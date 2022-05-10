@@ -1,11 +1,24 @@
 import os
 import shlex
 import subprocess
+import random
 
 import telebot
 
 TOKEN = os.environ['TOKEN']
 bot = telebot.TeleBot(TOKEN)
+answers = [
+    "Yes sir!",
+    "Working on it...",
+    "Just a moment",
+    "Yes my lord.",
+    "Your majesty, it's a honor!",
+    "I'm not in the mood today...",
+    "I don't wont to work!!!",
+    "I'm tired today :(",
+    "Don't want to do it",
+    "No.",
+]
 
 
 def run_cmd(url, chat_id, args=''):
@@ -42,6 +55,7 @@ def dl_video(msg):
 def dl_default(msg):
     url = msg.text
     print('Downloading audio by default:', msg.chat.id, url)
+    bot.send_message(msg.chat.id, random.choice(answers))
     run_cmd(url, msg.chat.id, args='--extract-audio --audio-format mp3')
 
 
