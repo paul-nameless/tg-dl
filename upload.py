@@ -3,18 +3,25 @@ import os
 
 import requests
 
-filename = sys.argv[1]
-chat_id = sys.argv[2]
-token = sys.argv[3]
 
-url = f"https://api.telegram.org/bot{token}/sendDocument?chat_id={chat_id}"
-files = {"document": open(filename, "rb")}
+def main():
+    try:
+        filename = sys.argv[1]
+        chat_id = sys.argv[2]
+        token = sys.argv[3]
 
-if "mp3" in filename:
-    url = f"https://api.telegram.org/bot{token}/sendAudio?chat_id={chat_id}"
-    files = {"audio": open(filename, "rb")}
+        url = f"https://api.telegram.org/bot{token}/sendDocument?chat_id={chat_id}"
+        files = {"document": open(filename, "rb")}
 
-r = requests.post(url, files=files)
-print(r.text)
+        if "mp3" in filename:
+            url = f"https://api.telegram.org/bot{token}/sendAudio?chat_id={chat_id}"
+            files = {"audio": open(filename, "rb")}
 
-os.remove(filename)
+        r = requests.post(url, files=files)
+        print(r.text)
+    finally:
+        os.remove(filename)
+
+
+if __name__ == '__main__':
+    main()
