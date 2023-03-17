@@ -23,7 +23,7 @@ answers = [
 
 def run_cmd(url, chat_id, args=''):
     hook = f'python3 upload.py {{}} {chat_id} {TOKEN}'
-    cmd = f"youtube-dl -o '%(title)s.%(ext)s' {args} --exec '{hook}' {url}"
+    cmd = f"yt-dlp -o '%(title)s.%(ext)s' {args} --exec '{hook}' {url}"
     print(shlex.split(cmd))
     proc = subprocess.Popen(shlex.split(cmd))
     proc.wait(timeout=900)

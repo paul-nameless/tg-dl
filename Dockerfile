@@ -4,7 +4,7 @@ WORKDIR /app
 
 RUN apt update && apt install -y ffmpeg curl
 
-RUN pip3 install -U pyTelegramBotAPI youtube-dl
+RUN pip3 install -U pyTelegramBotAPI yt-dlp
 
 ADD main.py /app/main.py
 ADD upload.py /app/upload.py
