@@ -1,17 +1,8 @@
-# Telegram music/video downloader
+# Telegram music downloader
 
-Download audio/video from youtube/soundcloud and get back in telegram
+Just send a link to video/audio and it will reply with a music file
 
-## Commands
-
-```
-/audio [url]
-/video [url]
-```
-
-Audio will download and upload to telegram mp3 and video will download and upload (if available) mp4 videofile.
-
-## How to run
+## Install
 
 ```
 git clone https://github.com/paul-nameless/tg-dl.git
